@@ -1,0 +1,158 @@
+/*** Import Fonts ***/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+/*** Variables ***/
+
+$Montserrat: 'Montserrat', sans-serif;
+$Lato:	'Lato', sans-serif;
+$Open-sans:	'Open Sans', sans-serif;
+$dark-gray: #3c3c3c;
+$light-gray: #a6a6a6;
+$UIblue: #57c6e1;
+$dark-brown: #542900;
+
+/* -------------------------------- 
+Small Window Size and Mobile Style
+-------------------------------- */
+@media screen and (max-width: 800px) {
+	
+	.work-des-container {
+		padding: 10px 0 !important;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	
+	.work-des-container {
+		min-width: 90% !important;
+	}
+	
+	h4 {
+		font-size: 15px !important;
+	}
+}
+
+body {
+	background: white;
+	font-family: $Lato;
+}
+
+/* -------------------------------- 
+		General Styles
+-------------------------------- */
+
+/*** Navbar ***/
+
+.navbar-container {
+	position: relative;
+	float: right;
+	height: 100px;
+	top: 50px;
+	right: 100px;
+	z-index: 10;
+}
+
+.nav, .navbar {
+	width: 150px;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	-webkit-display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+
+	a {
+		color: $dark-gray;
+		text-decoration: none;
+	}
+}
+
+.section-container, .image-container {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.work {
+	display: flex;
+	-webkit-justify-content: center space-around;
+	justify-content: center space-around;
+	flex-wrap: wrap;
+	font-family: $Lato;
+	
+	.work-des-container {
+		position: relative;
+		display: flex;
+		-webkit-justify-content: center;
+		justify-content: center;
+		padding: 50px 0;
+		width: 50%;
+		min-width: 300px;
+		max-width: 550px;
+		flex: 1 1 400px;
+	}
+	
+	.work-des {
+		position: relative;
+		width: 80%;
+		padding-bottom: 10px;
+		
+		h4 {
+			font-size: 18px;
+		}
+		
+		p {
+			font-weight: 300;
+			font-size: 13px;
+			line-height: 30px;
+		}
+		
+		p.work-stamp {
+			color: $light-gray;
+		}
+		
+		.work-title {
+			float: left;
+		}
+		
+		.work-details {
+			position: relative;
+			margin-left: 120px;
+
+		}
+	}
+}
+
+.footer {
+	position:relative;
+	margin-top: 30px;
+	bottom:10px;
+	height:20px;
+	width:230px;
+	left: 50%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	font-family: 'Inconsolata', ;		
+	font-size: 15px;
+	text-align: center;
+	
+	a {
+		color: $dark-gray;
+		text-decoration: none;
+	}
+}
+
+img.section-image {
+	width: 100%;
+	height: auto;
+	margin-top: -5px;
+}
