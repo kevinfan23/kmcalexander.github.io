@@ -1,6 +1,6 @@
 /*** Import Fonts ***/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,100,300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600);
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 /*** Variables ***/
@@ -26,14 +26,24 @@ body {
 -------------------------------- */
 /*** Navbar ***/
 .navbar-container {
-  position: relative;
-  float: right;
+  position: fixed;
   height: 100px;
-  top: 50px;
-  right: 100px;
-  z-index: 10; }
+  top: 0;
+  left: 50%;
+  margin-right: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 90%;
+  padding: 40px 0; }
+
+.logo-name {
+  display: block;
+  position: fixed;
+  float: left;
+  font-weight: 400; }
 
 .nav, .navbar {
+  float: right;
   width: 150px;
   font-size: 13px;
   font-weight: 400;
@@ -48,6 +58,30 @@ body {
   .nav a, .navbar a {
     color: #3c3c3c;
     text-decoration: none; }
+  .nav .nav-item, .navbar .nav-item {
+    padding: 5px 0; }
+    .nav .nav-item:after, .navbar .nav-item:after {
+      content: '\00a0';
+      display: block;
+      height: 1px;
+      width: 100%;
+      position: relative;
+      top: 3px;
+      background: transparent;
+      transition: top 0.3s ease-out;
+      -webkit-transition: top 0.3s ease-out; }
+    .nav .nav-item:hover:after, .navbar .nav-item:hover:after {
+      top: 7px;
+      background: #3c3c3c; }
+
+.active:after {
+  height: 2px !important; }
+
+.active.resume:after {
+  background: #1abc9c !important; }
+
+.active.about:after {
+  background: #9b59b6 !important; }
 
 .section-container, .image-container {
   position: relative;
@@ -55,7 +89,17 @@ body {
   padding: 0;
   width: 100%; }
 
+.section-fixed {
+  width: 100%;
+  position: fixed;
+  top: 100px; }
+
+.section-relative {
+  position: relative;
+  background: blue; }
+
 .work {
+  position: relative;
   display: flex;
   -webkit-justify-content: center space-around;
   justify-content: center space-around;
@@ -82,7 +126,7 @@ body {
       font-size: 13px;
       line-height: 30px; }
     .work .work-des p.work-stamp {
-      color: #a6a6a6; }
+      color: #34495e; }
     .work .work-des .work-title {
       float: left; }
     .work .work-des .work-details {

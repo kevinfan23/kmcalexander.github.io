@@ -1,7 +1,7 @@
 /*** Import Fonts ***/
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,100,300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600);
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
@@ -11,7 +11,7 @@ $Montserrat: 'Montserrat', sans-serif;
 $Lato:	'Lato', sans-serif;
 $Open-sans:	'Open Sans', sans-serif;
 $dark-gray: #3c3c3c;
-$light-gray: #a6a6a6;
+$light-gray: #34495e;
 $UIblue: #57c6e1;
 $dark-brown: #542900;
 
@@ -48,15 +48,27 @@ body {
 /*** Navbar ***/
 
 .navbar-container {
-	position: relative;
-	float: right;
+	position: fixed;
 	height: 100px;
-	top: 50px;
-	right: 100px;
-	z-index: 10;
+	top: 0;
+	left: 50%;
+	margin-right: 50%;
+	transform: translateX(-50%);
+	z-index: 999;
+	width: 90%;
+	padding: 40px 0;
+	
+}
+
+.logo-name {
+	display: block;
+	position: fixed;
+	float: left;
+	font-weight: 400;
 }
 
 .nav, .navbar {
+	float: right;
 	width: 150px;
 	font-size: 13px;
 	font-weight: 400;
@@ -73,6 +85,41 @@ body {
 		color: $dark-gray;
 		text-decoration: none;
 	}
+	
+	.nav-item {
+		padding: 5px 0;
+		
+		&:after {
+			content: '\00a0';
+			display: block;
+			height: 1px;
+			width: 100%;
+			position: relative;
+			top: 3px;
+			background: transparent;
+			transition: top .3s ease-out;
+			-webkit-transition: top .3s ease-out;
+		}
+		
+		&:hover:after {
+			top: 7px;
+			background: #3c3c3c;
+		}
+	}
+}
+
+.active {
+	&:after {
+		height: 2px !important;
+	}
+	
+	&.resume:after {
+		background: #1abc9c !important;
+	}
+	
+	&.about:after {
+		background: #9b59b6 !important;
+	}
 }
 
 .section-container, .image-container {
@@ -82,7 +129,19 @@ body {
 	width: 100%;
 }
 
+.section-fixed {
+	width: 100%;
+	position: fixed;
+	top: 100px;
+}
+
+.section-relative {
+	position: relative;
+	background: blue;
+}
+
 .work {
+	position: relative;
 	display: flex;
 	-webkit-justify-content: center space-around;
 	justify-content: center space-around;
