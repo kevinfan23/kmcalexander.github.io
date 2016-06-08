@@ -1,12 +1,24 @@
 $(document).ready(function() {
-	var workHeight = $('.section-fixed').height();
-	$('.certification').css('margin-top', workHeight + 100);
-	$(window).resize(function() {
-		workHeight = $('.section-fixed').height();
-		$('.certification').css('margin-top', workHeight + 100);
+	$('.navbar').addClass('animated slideInDown');
+	$('.intro-click').on('click', function() {
+		setTimeout(function(){
+			window.location.href='index.html'}, 
+			500
+		);
+	$('.navbar').addClass('animated slideOutUp');
 	});
-	
-	$('.nav-item').on('click', function() {
-		$('.navbar').addClass('animated fadeOutUp');
+	$('.about-click').on('click', function() {
+		setTimeout(function(){
+			window.location.href='about.html'}, 
+			500
+		);
+	$('.navbar').addClass('animated slideOutUp');
+	});
+	$('.resume-click').on('click', function() {
+		setTimeout(function(){
+			window.location.href='resume.html'}, 
+			500
+		);
+	$('.navbar').addClass('animated slideOutUp');
 	});
 });

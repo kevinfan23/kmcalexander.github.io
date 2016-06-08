@@ -21,7 +21,24 @@ Small Window Size and Mobile Style
 @media screen and (max-width: 800px) {
 	
 	.work-des-container {
-		padding: 10px 0 !important;
+		padding: 20px 0 !important;
+	}
+	
+	body.cover {
+		background-size: 100% !important;
+		background-position: center 50px !important;
+	}
+}
+
+@media screen and (max-width: 625px) {
+	
+	body.cover {
+		background-image: url('../img/background-mobile1.jpg') !important;
+		background-size: 100% !important;
+		background-position: center 50px !important;
+		-moz-animation: Background-md 1.3s ease !important;
+		-webkit-animation: Background-md 1.3s ease !important;
+		animation: Background-md 1.3s ease !important;
 	}
 }
 
@@ -33,6 +50,21 @@ Small Window Size and Mobile Style
 	
 	h4 {
 		font-size: 15px !important;
+	}
+	
+	body.cover {
+		background-position: center 120px !important;
+		-moz-animation: Background-ms 1.3s ease !important;
+		-webkit-animation: Background-ms 1.3s ease !important;
+		animation: Background-ms 1.3s ease !important;
+	}
+	
+	.nav-item {
+		padding: 5px 10px !important;
+		
+		&:nth-child(1) {
+			padding-left: 0 !important;
+		}
 	}
 }
 
@@ -57,29 +89,33 @@ body {
 	z-index: 999;
 	width: 90%;
 	padding: 40px 0;
-	
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+		background: linear-gradient(to bottom, rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%); 
+
 }
 
 .logo-name {
 	display: block;
-	position: fixed;
 	float: left;
 	font-weight: 400;
+	font-size: 18px;
+	width: 50%;
+	min-width: 200px;
 }
 
 .nav, .navbar {
 	float: right;
-	width: 150px;
+	width: 250px;
 	font-size: 13px;
 	font-weight: 400;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	-webkit-display: -webkit-flex;
-	display: flex;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-	-webkit-flex-wrap: nowrap;
-	flex-wrap: nowrap;
+	animation-duration: .8s;
 
 	a {
 		color: $dark-gray;
@@ -87,7 +123,12 @@ body {
 	}
 	
 	.nav-item {
-		padding: 5px 0;
+		padding: 5px 15px;
+		display: inline-block;
+		
+		&:nth-child(1) {
+			padding-left: 0;
+		}
 		
 		&:after {
 			content: '\00a0';
@@ -113,6 +154,10 @@ body {
 		height: 2px !important;
 	}
 	
+	&.intro:after {
+		background: #ecf0f1 !important;
+	}
+	
 	&.resume:after {
 		background: #1abc9c !important;
 	}
@@ -129,22 +174,112 @@ body {
 	width: 100%;
 }
 
-.section-fixed {
-	width: 100%;
+body.cover {
 	position: fixed;
-	top: 100px;
+	background: #B9BDC0;
+	background-image: url("../img/background1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 40px;
+	background-attachment: fixed;
+	-moz-animation: Background 1.3s ease;
+	-webkit-animation: Background 1.3s ease;
+	animation: Background 1.3s ease;
+	
+	.navbar-container {
+		background: transparent;
+	}
 }
 
-.section-relative {
-	position: relative;
-	background: blue;
+@-moz-keyframes Background {
+	0% {
+		background-position: center 100px;
+	}
+	100% {
+		background-position: center 40px;
+	}
+}
+
+@-webkit-keyframes Background {
+	0% {
+		background-position: center 100px;
+	}
+	100% {
+		background-position: center 40px;
+	}
+}
+
+@keyframes Background {
+	0% {
+		background-position: center 100px;
+	}
+	100% {
+		background-position: center 40px;
+	}
+}
+
+@-moz-keyframes Background-md {
+	0% {
+		background-position: center 100px;
+	}
+	100% {
+		background-position: center 50px;
+	}
+}
+
+@-webkit-keyframes Background-md {
+	0% {
+		background-position: center 100px;
+	}
+	100% {
+		background-position: center 50px;
+	}
+}
+
+@keyframes Background-md {
+	0% {
+		background-position: center 100px;
+	}
+	100% {
+		background-position: center 50px;
+	}
+}
+
+
+@-moz-keyframes Background-ms {
+	0% {
+		background-position: center 170px;
+	}
+	100% {
+		background-position: center 120px;
+	}
+}
+
+@-webkit-keyframes Background-ms {
+	0% {
+		background-position: center 170px;
+	}
+	100% {
+		background-position: center 120px;
+	}
+}
+
+@keyframes Background-ms {
+	0% {
+		background-position: center 170px;
+	}
+	100% {
+		background-position: center 120px;
+	}
 }
 
 .work {
 	position: relative;
+	display: -webkit-box;
 	display: flex;
 	-webkit-justify-content: center space-around;
 	justify-content: center space-around;
+	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
 	font-family: $Lato;
 	
@@ -154,6 +289,7 @@ body {
 		-webkit-justify-content: center;
 		justify-content: center;
 		padding: 50px 0;
+		margin: 0 auto;
 		width: 50%;
 		min-width: 300px;
 		max-width: 550px;
@@ -171,12 +307,13 @@ body {
 		
 		p {
 			font-weight: 300;
-			font-size: 13px;
+			font-size: 15px;
 			line-height: 30px;
 		}
 		
 		p.work-stamp {
 			color: $light-gray;
+			font-size: 13px;
 		}
 		
 		.work-title {
@@ -186,13 +323,12 @@ body {
 		.work-details {
 			position: relative;
 			margin-left: 120px;
-
 		}
 	}
 }
 
 .footer {
-	position:relative;
+	position:fixed;
 	margin-top: 30px;
 	bottom:10px;
 	height:20px;
